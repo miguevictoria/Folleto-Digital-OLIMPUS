@@ -18,61 +18,63 @@
   list-style: none;
 }
 
-header {
-  display: flex;
-  box-sizing: border-box;
-  place-items: center;
-  margin: 0;
-  padding: 0;
-}
-
-.logo-header {
-  width: 120px;
-}
-
 body {
-  display: grid;
-  grid-template-rows: auto;
+  display: flex;
   font-family: "atma";
-  padding: 40px;
-  place-items: center;
+  padding: 40px 0 20px;
   flex-direction: column;
-  margin: 0 auto;
-}
-
-.background {
   background: url("SUCURSAL/sucursal-bg.png");
   background-position: center;
   background-size: cover;
   min-height: 100vh;
 }
 
+header {
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  height: 32px;
+}
+
+header img {
+  max-width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 0;
+}
+
 .text-container {
-  margin: 20px auto;
+  margin: 12px auto;
+  height: auto;
 }
 
 .text-container h1 {
-  font-size: 48px;
+  font-size: 40px;
   color: var(--primary-morado);
   text-align: center;
 }
 
 .text-container h2 {
   font-family: "gotham";
-  font-size: 32px;
+  font-size: 28px;
   color: var(--secondary-turquesa);
   text-align: center;
 }
 
 .sucursales-grid {
+  grid-template-rows: 1fr 1fr;
   display: grid;
-  grid-template-rows: repeat(2, 1fr);
   align-items: end;
+  margin: 0 auto;
   gap: 40px;
+  padding-top: 3rem;
+  max-width: 70rem;
+  width: 100%;
 }
 
 .row1 {
   display: grid;
+  width: 100%;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 }
@@ -81,17 +83,38 @@ body {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
+  width: 100%;
 }
 
 .container {
+  display: flex;
+  justify-content: center;
   position: relative;
   height: 200px;
+  /* Efectos */
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+  &:hover {
+    transform: scale(1.08);
+  }
 }
 
 .layout {
-  position: relative;
-  margin: auto;
+  position: absolute;
+  display: flex;
+  justify-content: center;
   z-index: 2;
+  padding: 0;
+  bottom: 40%;
+  scale: 90%;
+}
+
+.row2 .layout {
+  margin-bottom: 3rem;
+}
+
+.vic .layout {
+  margin-bottom: 0;
 }
 
 .item {
@@ -100,27 +123,20 @@ body {
   flex-direction: column;
 
   /* Contenedor */
-  height: 180px;
+  position: absolute;
+  height: 160px;
   width: 360px;
   color: #fff;
-  padding: 32px;
+  padding: 24px;
   border-radius: 20px;
   background: linear-gradient(to top, #60269e, #991bbf);
   align-items: center;
   justify-content: flex-end;
-  position: absolute;
   top: 20px;
   z-index: 1;
 
   /* Font */
   font-family: "gotham";
-  font-size: 20px;
+  font-size: 16px;
   text-align: center;
-
-  /* Efectos */
-  transition: 0.3s ease-in-out;
-  cursor: pointer;
-  &:hover {
-    transform: scale(1.05);
-  }
 }
